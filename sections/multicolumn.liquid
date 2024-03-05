@@ -182,13 +182,13 @@
                   >
                 {%- endif -%}
 <div class="social-icons">
-  <a href="https://www.facebook.com/" target="_blank">
+  <a href="{{ block.settings.link_facebook }}" target="_blank">
     <i class="fab fa-facebook"></i>
   </a>
-  <a href="https://www.instagram.com/" target="_blank">
+  <a href="{{ block.settings.link_instagram }}" target="_blank">
     <i class="fab fa-instagram"></i>
   </a>
-  <a href="https://twitter.com/" target="_blank">
+  <a href="{{ block.settings.link_twitter }}" target="_blank">
     <i class="fab fa-twitter"></i>
   </a>
 </div>
@@ -465,14 +465,19 @@
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
         },
         {
-          "type": "text",
-          "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+          "type": "url",
+          "id": "link_facebook",
+          "label": "Link Facebook"
         },
         {
           "type": "url",
-          "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+          "id": "link_instagram",
+          "label": "Link Instagram"
+        },
+        {
+          "type": "url",
+          "id": "link_twitter",
+          "label": "Link Twitter"
         }
       ]
     }
