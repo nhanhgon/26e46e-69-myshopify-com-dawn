@@ -1,0 +1,52 @@
+{% stylesheet %}
+/* Thêm CSS tại đây nếu cần */
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Text Image Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "text_content",
+      "label": "Text Content"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image Banner",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign section_id = section.id | handle %}
+{% assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio %}
+
+<div id="Custom-Image-Banner-{{ section_id }}" class="custom-image-banner" style="background-color: #96bb7c;">
+  <div class="custom-image-banner__content">
+    <div class="custom-image-banner__text">
+      <p>{{ section.settings.text_content }}</p>
+      <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_text }}</a>
+    </div>
+    <div class="custom-image-banner__image">
+      <img src="{{ section.settings.image | img_url: '800x800' }}" alt="Main Image" style="max-width: 100%; height: auto;">
+    </div>
+  </div>
+</div>

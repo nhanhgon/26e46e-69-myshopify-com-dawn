@@ -1,0 +1,51 @@
+
+.header__user-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__user-login, .header__user-join {
+  text-decoration: none;
+    margin-left: 10px;
+    padding: 15px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.header__user-login {
+    color: #96bb7c;
+}
+.header__user-join {
+    color: #ffffff;
+    background: #96BB7C;
+    border-radius: 4px;
+}
+.header__user-join:after {
+    content: "\279C";
+    font-weight: 300;
+    }
+.header__user-icon {
+    font-size: 24px;
+}
+
+@media screen and (min-width: 990px) {
+    .header__user-login, 
+    .header__user-join {
+        display: block;
+    }
+    .header__user-icon {
+        display: none;
+    }
+}
+@media screen and (max-width: 989px) {
+    .header__user-login, 
+    .header__user-join {
+        display: none;
+    }
+    .header__user-icon {
+        display: block;
+    }
+}
+
